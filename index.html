@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <!--
+
+            Aufbau des Prototyps:
+
+                index.html                          -   Der eigentliche Content.
+                assets/css/marx.min.css             -   Das CSS-Framework.
+                assets/css/style.css                -   Unser CSS.
+                assets/js/jquery-3.5.1.min.js       -   jQuery 3.5.1 (minified).
+                assets/js/jquery.scrollTo.min.js    -   jQuery-Plugin für weiches Scrolling (minified).
+                assets/js/script.js                 -   Unser JS-Code.
+
+            Webseite auf dem Smartphone aufrufen:
+
+                1. Terminal öffnen (macOS).
+                2. Ins Prototyp-Verzeichnis wechseln, z. B.:
+
+                        $ cd Desktop/prototype/
+
+                3. Pythons HTTP-Server starten (im Terminal):
+
+                        $ python3 -m http.server 8080
+
+                4. Im Browser testen:
+
+                        http://localhost:8080/
+
+                5. IP-Adresse deines MacBook Pros bestimmen (Terminal):
+
+                        $ ifconfig | grep inet
+
+                   Es sollte u. a. eine ähnliche Zeile erscheinen:
+
+                        inet 10.10.10.100 netmask 0xffffff00 broadcast 10.10.10.255
+                             ^^^^^^^^^^^^
+                             IP-Adresse
+
+                6. Smartphone muss mit deinem WLAN verbunden sein. Im
+                   Android-Browser öffnen:
+
+                        http://10.10.10.100:8080/
+                               ^^^^^^^^^^^^
+                               Durch deine IP ersetzen
+
+        //-->
+
+        <title>Prototype</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <!--
+
+            Als CSS-Framework nutzen wir einfach "Marx":
+
+                https://github.com/mblode/marx
+
+            Das klassenlose Framework (no JavaScript, no classes, just raw CSS)
+            soll einfach nur das HTML aufhübschen. In `assets/css/` ist das
+            minimierte CSS und ein paar Anpassungen in der Datei `style.css`.
+            Wir könnten auch Bootstrap o. ä. einsetzen, aber das wird dann
+            gleich zu komplex für einen Prototyp.
+
+            JavaScript wird unten geladen.
+
+        //-->
+
+        <link rel="stylesheet" href="assets/css/marx.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+    </head>
+
+    <body>
+
+        <!-- Das Layout der Navigation wird in `style.css` definiert. //-->
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html" class="brand">みつばちマーヤの冒険</a></li>
+                <li>Foo</li>
+                <li><a href="#prototype">Prototype</a></li>
+                <li><a href="#aside">Aside</a></li>
+            </ul>
+        </nav>
+
+        <!-- Der Inhalt. //-->
+        <main>
+
+            <h2 id="prototype">Prototype <small>fresh</small></h2>
+
+            <hr>
+
+            <p><b>Erster Absatz.</b> Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nam sodales justo at felis imperdiet imperdiet.
+            Aenean placerat lacus at enim faucibus, elementum interdum justo
+            commodo. Sed congue malesuada orci, nec blandit enim bibendum vel.
+            Duis cursus dignissim venenatis. Nullam porta pretium sapien, ac
+            ultrices arcu consectetur ac. Praesent pulvinar risus id bibendum
+            placerat. Quisque placerat turpis quis nisi rutrum, ut volutpat leo
+            tincidunt. Sed sed scelerisque urna, vel mollis dui. Vivamus tempus
+            justo sed pellentesque pretium. Mauris eget libero nec augue
+            imperdiet congue euismod imperdiet libero. Vivamus scelerisque
+            tempor consequat.  Nullam vulputate neque vel imperdiet
+            porttitor.</p>
+
+            <p><b>Zweiter Absatz.</b> Pellentesque habitant morbi tristique
+            senectus et netus et malesuada fames ac turpis egestas. Suspendisse
+            congue elit vitae enim molestie, viverra molestie dolor blandit.
+            Sed sollicitudin mauris nec tellus consequat, eget imperdiet risus
+            egestas. Nam sed venenatis metus. Mauris vel lectus maximus,
+            finibus sem id, malesuada ipsum. Mauris eleifend rhoncus metus in
+            facilisis.  Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Duis a nulla nunc. Maecenas commodo
+            massa eleifend orci vulputate, eu ullamcorper risus iaculis. Sed ut
+            nunc nec nunc ultrices ultrices. Cras tincidunt enim sit amet enim
+            imperdiet facilisis. Nulla ac egestas lacus, at convallis nibh. In
+            tincidunt dictum lacus in lacinia. Aliquam pellentesque iaculis
+            nisi, ut dictum felis posuere vitae. Pellentesque suscipit
+            fringilla magna, et ultricies dui condimentum nec.</p>
+
+            <p><b>Dritter Absatz.</b> Donec finibus dictum quam sed
+            ullamcorper. Curabitur maximus nunc eu ex aliquam blandit. Donec
+            nisi diam, bibendum eu euismod sed, commodo non risus. Suspendisse
+            potenti. Phasellus placerat ex ante, ac consequat leo rutrum vitae.
+            Nunc pellentesque turpis ut rhoncus sodales. Donec laoreet eros sit
+            amet mauris semper, vitae blandit massa auctor. Morbi sit amet
+            eleifend massa.</p>
+
+            <p>Curabitur vehicula elementum rutrum. Aenean mattis est a rhoncus
+            posuere. Proin sagittis ligula sed ex dignissim condimentum ac in
+            mauris. Proin faucibus nisl dolor, a tincidunt quam auctor quis. Sed
+            varius odio ut egestas accumsan. Donec iaculis semper ullamcorper.
+            Sed hendrerit gravida metus, nec blandit risus vehicula eget.
+            Vestibulum libero sapien, dapibus in nisl et, venenatis imperdiet
+            dolor. Quisque auctor gravida nulla vel vehicula.</p>
+
+            <p>Ut pharetra fermentum dui sed malesuada. Nulla sit amet nisl ut
+            mauris egestas pulvinar. Morbi sit amet massa eu nisi malesuada
+            sagittis. Sed nec condimentum eros. Mauris et ligula placerat,
+            scelerisque tellus a, dapibus nulla. In fermentum orci vitae eros
+            eleifend venenatis. Vestibulum suscipit, metus quis gravida congue,
+            neque nibh fermentum ipsum, eu sagittis lorem orci a ligula. Nulla
+            venenatis dui lectus, a commodo tellus volutpat et. Fusce mollis
+            mattis nibh, et aliquet lacus tempus vitae. Vestibulum fringilla,
+            lectus sed facilisis convallis, dui lacus fringilla leo, at
+            tristique ligula nunc in magna.</p>
+
+            <aside>
+                <h2 id="aside">Aside</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                sodales justo at felis imperdiet imperdiet. Aenean placerat
+                lacus at enim faucibus, elementum interdum justo commodo.</p>
+            </aside>
+
+            <p>Donec finibus dictum quam sed ullamcorper. Curabitur maximus nunc
+            eu ex aliquam blandit. Donec nisi diam, bibendum eu euismod sed,
+            commodo non risus. Suspendisse potenti. Phasellus placerat ex ante,
+            ac consequat leo rutrum vitae. Nunc pellentesque turpis ut rhoncus
+            sodales. Donec laoreet eros sit amet mauris semper, vitae blandit
+            massa auctor. Morbi sit amet eleifend massa.</p>
+
+            <hr>
+
+            <p>Curabitur vehicula elementum rutrum. Aenean mattis est a rhoncus
+            posuere. Proin sagittis ligula sed ex dignissim condimentum ac in
+            mauris. Proin faucibus nisl dolor, a tincidunt quam auctor quis. Sed
+            varius odio ut egestas accumsan. Donec iaculis semper ullamcorper.
+            Sed hendrerit gravida metus, nec blandit risus vehicula eget.
+            Vestibulum libero sapien, dapibus in nisl et, venenatis imperdiet
+            dolor. Quisque auctor gravida nulla vel vehicula.</p>
+
+            <p>Ut pharetra fermentum dui sed malesuada. Nulla sit amet nisl ut
+            mauris egestas pulvinar. Morbi sit amet massa eu nisi malesuada
+            sagittis. Sed nec condimentum eros. Mauris et ligula placerat,
+            scelerisque tellus a, dapibus nulla. In fermentum orci vitae eros
+            eleifend venenatis. Vestibulum suscipit, metus quis gravida congue,
+            neque nibh fermentum ipsum, eu sagittis lorem orci a ligula. Nulla
+            venenatis dui lectus, a commodo tellus volutpat et. Fusce mollis
+            mattis nibh, et aliquet lacus tempus vitae. Vestibulum fringilla,
+            lectus sed facilisis convallis, dui lacus fringilla leo, at
+            tristique ligula nunc in magna.</p>
+
+            <footer>
+
+                <p style="margin-bottom: 1em;"><small><a href="#menu">Top</a></small></p>
+
+            </footer>
+
+            <div id="scroll">
+                <p><button id="scroll-up">⯅</button></p>
+                <p><button id="scroll-down">⯆</button></p>
+            </div>
+
+        </main>
+
+    </body>
+
+    <!--
+
+        JavaScript laden.
+
+    //-->
+
+    <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</html>
